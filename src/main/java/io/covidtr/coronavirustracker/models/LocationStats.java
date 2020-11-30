@@ -4,7 +4,8 @@ public class LocationStats {
 
     private String state;
     private String country;
-    private int leatestTotalCases;
+    private int latestTotalCases;
+    private int deltaPrevDay;
 
     public String getState() {
         return state;
@@ -14,8 +15,20 @@ public class LocationStats {
         return country;
     }
 
+    public int getDeltaPrevDay() {
+        return deltaPrevDay;
+    }
+
+    public void setDeltaPrevDay(int deltaPrevDay) {
+        this.deltaPrevDay = deltaPrevDay;
+    }
+
     public int getLatestTotalCases() {
-        return leatestTotalCases;
+        return latestTotalCases;
+    }
+
+    public void setLatestTotalCases(int latestTotalCases) {
+        this.latestTotalCases = latestTotalCases;
     }
 
     public void setState(String state) {
@@ -26,16 +39,12 @@ public class LocationStats {
         this.country = country;
     }
 
-    public void setLeatestTotalCases(int leatestTotalCases) {
-        this.leatestTotalCases = leatestTotalCases;
-    }
-
     @Override
     public String toString() {
         return "LocationStats{" +
                 "state='" + state + '\'' +
                 ", country='" + country + '\'' +
-                ", leatestTotalCases=" + leatestTotalCases +
+                ", leatestTotalCases=" + latestTotalCases +
                 '}';
     }
 }

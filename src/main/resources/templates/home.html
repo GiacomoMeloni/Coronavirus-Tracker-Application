@@ -9,20 +9,30 @@
 </head>
 
 <body>
+    <div class="container">
+        <h1>Coronavirus Tracker Application</h1>
+        <p>This application lists the current number of cases reported across the globe</p>
 
-    <table>
-        <tr>
-            <th>STATE</th>
-            <th>COUNTRY</th>
-            <th>TOTAL CASES</th>
-        </tr>
-        <tr th:each="stat : ${locationStats}">
-            <td th:text="${stat.getState()}"></td>
-            <td th:text="${stat.getCountry()}"></td>
-            <td th:text="${stat.getLatestTotalCases()}">0</td>
-        </tr>
-    </table>
+        <div class="jumbotron">
+            <h1 class="display-4" th:text="${totalReportedCases}"></h1>
+            <p class="lead">Total cases reported as of today</p>
+        </div>
 
+        <table class="table">
+            <tr>
+                <th>STATE</th>
+                <th>COUNTRY</th>
+                <th>TOTAL CASES</th>
+                <th>DELTA PREVIOUS DAY</th>
+            </tr>
+            <tr th:each="stat : ${locationStats}">
+                <td th:text="${stat.getState()}"></td>
+                <td th:text="${stat.getCountry()}"></td>
+                <td th:text="${stat.getLatestTotalCases()}">0</td>
+                <td th:text="${stat.getDeltaPrevDay()}">0</td>
+            </tr>
+        </table>
+    </div>
 </body>
 
 </html>
