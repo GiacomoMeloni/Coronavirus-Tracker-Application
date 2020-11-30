@@ -14,7 +14,7 @@ public class LocationStats {
         return country;
     }
 
-    public int getLeatestTotalCases() {
+    public int getLatestTotalCases() {
         return leatestTotalCases;
     }
 
